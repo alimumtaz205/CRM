@@ -1,0 +1,14 @@
+.d-lg-flex{
+  background-image: url('~src/assets/images/bg-final.jpg');
+  height: 100vh;
+  opacity: 0.9;
+}
+
+.container{
+  background-color: #2d436b;
+  color: #ffffff;
+}
+
+.form-fields{
+  color: antiquewhite;
+}

@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+table {
+    width: 100%;
+  }
+
+  .bg-card1{
+    background-color: #40189d;
+    border-radius: 5%;
+  }
+
+  .bg-card2{
+    background-color: #48a9f8;
+    border-radius: 5%;
+  }
+  .bg-card3{
+    background-color: #36d492;
+    border-radius: 5%;
+  }
+  .bg-card4{
+    background-color: #8bc740;
+    border-radius: 5%;
+  }
+
+  .svg-icon{
+    width: 505;
+  }
