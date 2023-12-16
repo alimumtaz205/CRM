@@ -1,6 +1,6 @@
 <div class="side-nav-content">
 
-    
+
     <ul class="nav-list" [ngClass]="{'nav-list-open':sideNavStatus}">
         <li class="nav-list-item">
             <i class="fa fa-tachometer"></i>
@@ -8,19 +8,30 @@
                     <a routerLink="dashboard">Dashboard</a>
                 </span>
         </li>
-        <li class="nav-list-item" *ngFor="let item of list">
+        <li class="nav-list-item" *ngFor="let item of listMenu">
 
                 <a class="nav-link  px-0" routerLink={{item.url}} id="navbarDropdown" role="button"
                    data-bs-toggle="dropdown" aria-expanded="false">
-        <span class="p-1 me-2">
-        </span>
-        <i class="{{item.icon}}"></i>
+                    <span class="p-1 me-2">
+                    </span>
+                    <i class="{{item.icon}}"></i>
                   <strong class="hide-custom">{{item.name}}</strong>
                 </a>
-            
-
         </li>
+
+        <li class="nav-list-item">
+            <i class="fa fa-sign-out"></i>
+                <span>
+                    <a class="nav-link" routerLink="" (click)="signOut()">
+                        <strong class="hide-custom">Sign Out</strong>
+                    </a>
+                </span>
+        </li>
+
+        <!-- <li class="nav-list-item">
+            <i class="fa fa-sign-out"></i>
+             <a><strong class="nav-link" (click)="signOut()">Sign Out</strong></a>
+        </li> -->
     </ul>
-    
 
 </div>

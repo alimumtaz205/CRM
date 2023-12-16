@@ -4,7 +4,7 @@ import { ApexAxisChartSeries, ApexChart, ApexDataLabels, ApexGrid, ApexStroke, A
 export type ChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
-  xaxis: ApexXAxis;
+  xaxis: ApexXAxis; 
   dataLabels: ApexDataLabels;
   grid: ApexGrid;
   stroke: ApexStroke;

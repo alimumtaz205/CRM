@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 
 
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
      private router: Router,
      private activatedRoute: ActivatedRoute,
      private formBuilder: FormBuilder,
-     //private toastr: ToastrService
+     private toastr: ToastrService
     ) {}
 
   ngOnInit(): void {
@@ -60,16 +61,36 @@ export class LoginComponent implements OnInit {
       return;
     }
     else{
+      debugger;
       const authData = {
         username: controls['username'].value,
         password: controls['password'].value,
       };
+      localStorage.setItem("token", JSON.stringify("21312adsadas121312312"))
+
       if(authData.username == "Admin" && authData.password == "Admin")
       {
+        localStorage.setItem("UserRole", "1");
         this.router.navigate(['/dashboard']);
       }
+      else if(authData.username == "Supervisor" && authData.password == "Supervisor")
+      {
+        localStorage.setItem("UserRole", "2");
+        this.router.navigate(['/profile']);
+      }
+      else if(authData.username == "Agent" && authData.password == "Agent")
+      {
+        localStorage.setItem("UserRole", "3");
+        this.router.navigate(['/profile']);
+      }
+      else if(authData.username == "Customer" && authData.password == "Customer")
+      {
+        localStorage.setItem("UserRole", "4");
+        this.router.navigate(['/profile']);
+      }
       else{
-         // this.toastr.error('Invalid Username or password', 'Error!');
+        localStorage.removeItem("token")
+         this.toastr.error('Invalid Username or password', 'Error!');
       }
     }
   }

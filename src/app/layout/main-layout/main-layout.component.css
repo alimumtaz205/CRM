@@ -20,7 +20,7 @@ app-side-nav{
     height: calc(170vh - 10rem);
     /* box-shadow: 0px 0px 10px;  */
     /* background-color: rgba(34, 34, 34, 1); */
-    background-image: linear-gradient(#1d2c45, #2d436b);
+    background-image: linear-gradient(#056de8, #59287c,  #e31562);
     overflow-x: hidden;
     white-space: nowrap;
     transition: width 250ms ease-in;
@@ -35,9 +35,11 @@ app-side-nav{
     left: 60px;
     width: calc(100% - 60px);
     transition: left 250ms ease-in, width 250ms ease-in;
+    background-color: #e3e3e3;
 }
 
 .display-area-shrink{
     width: calc(100% - 250px);
     left: 250px;
+    background-color: #e3e3e3;
 }

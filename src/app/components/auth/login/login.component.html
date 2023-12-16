@@ -6,10 +6,13 @@
     <div class="container">
       <div class="row align-items-center justify-content-center">
         <div class="col-md-7">
-          <h3>Login to <strong>Customer Portal</strong></h3>
-          <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+            <img src="assets/images/logo-main.png">
+          <h1><strong>Selah Customer Portal</strong></h1>
+          <!-- <br><br> -->
+          <!-- <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p> -->
           <form class="form-right" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
-            <h2 class="text-uppercase mt-2">Login</h2>
+            <h3>Login Here</h3>
+            <hr>
             <div class="form-group">
                 <mat-form-field>
                     <mat-label class="form-fields">Username</mat-label>
@@ -43,7 +46,7 @@
                 </label>
             </div> -->
             <div class="form-field ">
-                <button type="submit" class="btn btn-primary" name="register">Login</button>
+                <button type="submit" class="btn btn-login" name="register">Login</button>
             </div>
         </form>
         </div>
