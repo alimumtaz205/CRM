@@ -14,7 +14,7 @@
         </div>
         <div class="d-flex mt-xl-custom xs-custom">
             <!-- <button class="btn btn-theme me-3" data-bs-toggle="modal" data-bs-target="#add_university">Add New University</button> -->
-            <button class="btn btn-login" (click)="addUser()">New Order</button>
+            <button class="btn btn-login" (click)="addOrder()">New Order</button>
             
             <button class="btn btn-primary xs-custom-mt" style="margin-left: 10px;">
                 <svg class="me-1" width="16" height="16" viewBox="0 0 19 19" fill="none"
@@ -33,28 +33,28 @@
             <caption></caption>
             <ng-container matColumnDef="orderNo">
                 <th mat-header-cell class="table-header-style" *matHeaderCellDef scope="col">Order#</th>
-                <td mat-cell *matCellDef="let element">{{ element.orderNo }}</td>
+                <td mat-cell *matCellDef="let element">{{ element.order_id }}</td>
             </ng-container>
 
             <ng-container matColumnDef="productType">
                 <th mat-header-cell class="table-header-style" *matHeaderCellDef scope="col">Product Type</th>
-                <td mat-cell *matCellDef="let element">{{ element.productType }}</td>
+                <td mat-cell *matCellDef="let element">{{ element.product_type }}</td>
             </ng-container>
 
             <ng-container matColumnDef="Details">
                 <th mat-header-cell class="table-header-style" *matHeaderCellDef scope="col">Order Details</th>
-                <td mat-cell *matCellDef="let element">{{ element.Details }}</td>
+                <td mat-cell *matCellDef="let element">{{ element.product }}</td>
             </ng-container>
 
             <ng-container matColumnDef="company">
                 <th mat-header-cell class="table-header-style" *matHeaderCellDef scope="col">Company</th>
-                <td mat-cell *matCellDef="let element">{{ element.company }}</td>
+                <td mat-cell *matCellDef="let element">{{ element.sub_product }}</td>
             </ng-container>
 
 
             <ng-container matColumnDef="policyNumber">
                 <th mat-header-cell class="table-header-style" *matHeaderCellDef scope="col">Policy#</th>
-                <td mat-cell *matCellDef="let element">{{ element.policyNumber }}</td>
+                <td mat-cell *matCellDef="let element">{{ element.comapny }}</td>
             </ng-container>
 
 
@@ -66,22 +66,22 @@
 
             <ng-container matColumnDef="insuranceName">
                 <th mat-header-cell class="table-header-style" *matHeaderCellDef scope="col">Insurance Name</th>
-                <td mat-cell *matCellDef="let element">{{ element.insuranceName }}</td>
+                <td mat-cell *matCellDef="let element">{{ element.policy_no }}</td>
             </ng-container>
 
             <ng-container matColumnDef="assignedAgent">
                 <th mat-header-cell class="table-header-style" *matHeaderCellDef scope="col">Assigned Agent</th>
-                <td mat-cell *matCellDef="let element">{{ element.assignedAgent }}</td>
+                <td mat-cell *matCellDef="let element">{{ element.assigned_agent }}</td>
             </ng-container>
 
             <ng-container matColumnDef="referalChannel">
                 <th mat-header-cell class="table-header-style" *matHeaderCellDef scope="col">Referal Channel</th>
-                <td mat-cell *matCellDef="let element">{{ element.referalChannel }}</td>
+                <td mat-cell *matCellDef="let element">{{ element.referral_channel }}</td>
             </ng-container>
 
             <ng-container matColumnDef="referalId">
                 <th mat-header-cell class="table-header-style" *matHeaderCellDef scope="col">Referal Id</th>
-                <td mat-cell *matCellDef="let element">{{ element.referalId }}</td>
+                <td mat-cell *matCellDef="let element">{{ element.referral_agent_id }}</td>
             </ng-container>
 
             <ng-container matColumnDef="status">
@@ -91,7 +91,7 @@
 
             <ng-container matColumnDef="lastContacted">
                 <th mat-header-cell class="table-header-style" *matHeaderCellDef scope="col">lastContacted</th>
-                <td mat-cell *matCellDef="let element">{{ element.lastContacted }}</td>
+                <td mat-cell *matCellDef="let element">{{ element.last_contacted_date }}</td>
             </ng-container>
 
 

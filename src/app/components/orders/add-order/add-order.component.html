@@ -1,0 +1,122 @@
+<!-- add university modal -->
+
+<div class="modal-header text-white bg-theme">
+    <h5 class="modal-title">Add Order</h5>
+    <button type="button" class="btn-close btn-close-white" [mat-dialog-close]="" aria-label="Close"></button>
+</div>
+<form class="form-right" [formGroup]="addUserForm">
+
+    <div class="container">
+        <div class="row mt-4">
+
+            <!-- <mat-form-field class="col-md-6" hidden="false">
+                <mat-label>Product Type</mat-label>
+                <input matInput placeholder="Product Type" formControlName="productType" value="">
+
+            </mat-form-field> -->
+
+            <mat-form-field class="col-md-6">
+                <mat-label>Product Type</mat-label>
+                <input matInput placeholder="Enter Name" formControlName="productType" value="">
+                <mat-error *ngIf="hasError('productType', 'required')">Product Type is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-6">
+                <mat-label>Order Details</mat-label>
+                <input matInput placeholder="Enter Name" formControlName="orderDetails" value="">
+                <mat-error *ngIf="hasError('orderDetails', 'required')">Order Detail is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-6">
+                <mat-label>Company</mat-label>
+                <mat-select placeholder="Select Profile" formControlName="company"
+                    (selectionChange)="changeClient($event.value)">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let profile of profileListModel"
+                        [value]="profile.company">{{profile.profileName}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="hasError('company', 'required')">company is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-md-6">
+                <mat-label>policyNo</mat-label>
+                <input matInput placeholder="Enter User Code" formControlName="policyNo" value="">
+                <mat-error *ngIf="hasError('policyNo', 'required')">User Code is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-md-6">
+                <mat-label>coverage</mat-label>
+                <mat-select placeholder="Enter User Type" formControlName="coverage">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let usertype of UsertypesListModel"
+                        [value]="usertype.userTypeId">{{usertype.userTypeName}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="hasError('coverage', 'required')">user Type is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-md-6">
+                <mat-label>insuranceName</mat-label>
+                <mat-select placeholder="Select City" formControlName="insuranceName"
+                    (selectionChange)="changeClientCity($event.value)">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let city of cityListModel" [value]="city.id">{{city.name}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="hasError('insuranceName', 'required')">insuranceName is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-md-6">
+                <mat-label>assignedAgent</mat-label>
+                <mat-select placeholder="Select Branch" formControlName="assignedAgent"
+                    (selectionChange)="changeClientBranch($event.value)">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let branch of branchListModel" [value]="branch.id">{{branch.name}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="hasError('assignedAgent', 'required')">assignedAgent is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-md-6">
+                <mat-label>referalChannel</mat-label>
+                <input matInput placeholder="Enter Email" formControlName="referalChannel" value="">
+                <mat-error *ngIf="hasError('referalChannel', 'required')">Email Address is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-md-6">
+                <mat-label>referalId</mat-label>
+                <input matInput placeholder="Please Enter Address" formControlName="referalId">
+                <mat-error *ngIf="hasError('referalId', 'required')">Address is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+
+            <mat-form-field class="col-md-6">
+                <mat-label>status</mat-label>
+                <input type="number" matInput placeholder="Please Enter Mobile No." formControlName="status" min="0">
+                <mat-error *ngIf="hasError('status', 'required')">status No is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-md-6">
+                <mat-label>lastContacted</mat-label>
+                <input matInput placeholder="Please Enter Password" formControlName="lastContacted">
+                <mat-error *ngIf="hasError('lastContacted', 'required')">Password is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+           
+        </div>
+    </div>
+    <div class="modal-footer border-0">
+        <!-- <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>   -->
+        <button type="button" mat-raised-button class="btn btn-danger" color="warn"
+            [mat-dialog-close]="">Cancel</button>
+        <button type="button" mat-raised-button class="btn btn-primary" color="primary"
+            (click)="onSubmit()">{{buttonText}}</button>
+    </div>
+</form> 

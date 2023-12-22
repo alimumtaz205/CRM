@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table'
+import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { MatDialog } from '@angular/material/dialog';
 
 export interface PeriodicElement {
   Customer_Name: string;
@@ -33,7 +35,9 @@ export class CustomerComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'Customer_Name', 'Email', 'Contact', 'Address', 'Nationality','Date_of_birth', 'Status','Action'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialog,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -43,4 +47,18 @@ export class CustomerComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  addCustomer(){
+    var width = (window.innerWidth - 80) + 'px';
+      var height = (window.innerHeight - 150) + 'px';
+  
+      const dialogRef = this.dialogRef.open(AddCustomerComponent, { height: height, width: width, disableClose: true });
+      dialogRef.afterClosed().subscribe((res: any) => {
+        if (!res) {
+          debugger;
+          return;
+        }
+  
+        //this.getUsers();
+      });
+  }
 }

@@ -37,6 +37,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { AddOrderComponent } from './components/orders/add-order/add-order.component';
+import { AddCustomerComponent } from './components/customer/add-customer/add-customer.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     AddUserComponent,
     AlertNotificationComponent,
     DeleteEntityDialogComponent,
-    AlertDialogComponent
+    AlertDialogComponent,
+    AddOrderComponent,
+    AddCustomerComponent
   ],
   imports: [
     BrowserModule,

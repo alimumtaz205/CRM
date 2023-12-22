@@ -2,8 +2,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Users } from 'src/app/_models/Users';
+import { OrderService } from 'src/app/services/orderService/order.service';
 import { UtilsService } from 'src/app/services/utils.service';
+import { AddOrderComponent } from './add-order/add-order.component';
 
 @Component({
   selector: 'app-orders',
@@ -23,20 +26,44 @@ export class OrdersComponent implements OnInit {
     selection: any;
   
     constructor(
+      private service:OrderService,
       public dialogRef: MatDialog,
       private layoutUtilsService: UtilsService,
     ) { }
   
     ngOnInit(): void {
-      this.getUsers()
+      this.getOrders()
     }
   
-    getUsers() {
-      
+    getOrders() {
+      debugger
+      this.service.GetOrders()
+        .subscribe({
+          next: (resp) => {
+            if (resp.isSuccess) {
+              debugger;
+              this.dataSource = new MatTableDataSource(resp.data);
+              this.dataSource.sort = this.sort;
+              this.dataSource.paginator = this.paginator;
+            }
+            else {
+              debugger;
+            }
+            console.error();
+  
+          }
+        });
     }
   
-    addUser() {
-     
+    addOrder() {
+      this.dialogRef.open(AddOrderComponent, {
+        width: '40%',
+        panelClass: 'custom-modalbox'
+      }).afterClosed().subscribe(val=>{
+        if(val==='add'){
+          //this.getcities(this.lovType);
+        }
+      })
     }
   
     editUser(user: Users) {

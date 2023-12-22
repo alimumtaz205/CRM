@@ -17,6 +17,7 @@ import { finalize } from 'rxjs';
 export class UserRoleComponent implements OnInit {
     dataSource: any;
     selected: number = 1;
+    userList:[]=[];
     displayedColumns: string[] =
       ['userID', 'userType', 'userStatus', 'Action'];
   
@@ -34,6 +35,7 @@ export class UserRoleComponent implements OnInit {
   
     ngOnInit(): void {
       this.getUsers()
+      this.userList
     }
   
     getUsers() {
@@ -43,7 +45,7 @@ export class UserRoleComponent implements OnInit {
             if (resp.isSuccess) {
               debugger;
               this.dataSource = new MatTableDataSource(resp.data);
-              // this.dataSource.sort = this.sort;
+              this.dataSource.sort = this.sort;
               this.dataSource.paginator = this.paginator;
             }
             else {

@@ -47,12 +47,12 @@ constructor(
         url:'orders',
         icon:'fa-solid fa-shopping-cart',
       },
-      {
-        number:'4',
-        name:'Reports',
-        url:'reports',
-        icon:'fa-solid fa-file-text',
-      },
+      // {
+      //   number:'4',
+      //   name:'Reports',
+      //   url:'reports',
+      //   icon:'fa-solid fa-file-text',
+      // },
       {
         number:'8',
         name:'User Management',
@@ -64,13 +64,13 @@ constructor(
         name:'User Roles',
         url:'users-roles',
         icon:'fa-solid fa-users',
-      },
-      {
-        number:'7',
-        name:'Settings',
-        url:'customers',
-        icon:'fa-solid fa fa-gear',
       }
+      // {
+      //   number:'7',
+      //   name:'Settings',
+      //   url:'customers',
+      //   icon:'fa-solid fa fa-gear',
+      // }
     ]
   
     this.listSupervisor=[

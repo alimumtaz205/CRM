@@ -52,7 +52,7 @@ export class AddUserComponent implements OnInit {
       },
       {
         "userTypeId": 2,
-        "userTypeName": "Supervoiser"
+        "userTypeName": "Supervisor"
       },
       {
         "userTypeId": 3,
